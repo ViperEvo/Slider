@@ -1,0 +1,81 @@
+body
+{
+    background-color: rgb(210, 210, 210);
+    margin: 0;
+}
+.photo
+{
+    width: 800px;
+    height: 600px;
+    float: left;
+    position: absolute;
+    transition: all ease-in-out 500ms;
+    cursor: pointer;
+}
+.photo:hover
+{
+    transform: scale(1.03);
+}
+#slider
+{   
+    width: 1600px;
+    height: 600px;
+    position: relative;
+    left: -800px;
+}
+#main
+{   
+    margin-top: 100px;
+    left: 150px;
+    width: 1600px;
+    height: 600px;
+    overflow: hidden;
+    position: absolute;
+}
+.overlay
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.70);
+    z-index: 1000;
+}
+.photopop
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1200px;
+    height: 900px;
+    display: block;
+    background: rgb(210, 210, 210);
+    z-index: 1001;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+.photopop span
+{
+    top: 10px;
+    left: 10px;
+    position: relative;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 0px;
+    z-index: 1002;
+    color: rgb(210, 210, 210);
+}
+.popup img
+{
+    display: none;
+    width: 1200px;
+    height: 900px;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.popup
+{
+    display: none;
+}

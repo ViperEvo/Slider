@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+
+</head>
+<body>
+    <div>
+        <div id="main">
+            <div id="slider">
+                <img src="https://images8.alphacoders.com/522/thumb-1920-522035.jpg" alt="" class="photo" id="img1">
+                <img src="https://images8.alphacoders.com/695/thumb-1920-695165.jpg" alt="" class="photo" id="img2">
+                <img src="https://images.alphacoders.com/658/thumb-1920-658784.jpg" alt="" class="photo" id="img3">
+                <img src="https://images3.alphacoders.com/718/thumb-1920-718979.jpg" alt="" class="photo" id="img4">
+            </div>
+        </div>
+        <div class="popup" id="popup">
+            <div class="overlay" id="overlay">
+            </div>
+            <div class="photopop">
+                <span id="X">X</span>
+                <img src="https://images8.alphacoders.com/522/thumb-1920-522035.jpg"id="img11">
+                <img src="https://images8.alphacoders.com/695/thumb-1920-695165.jpg"id="img22">
+                <img src="https://images.alphacoders.com/658/thumb-1920-658784.jpg"id="img33">
+                <img src="https://images3.alphacoders.com/718/thumb-1920-718979.jpg" id="img44">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("img1").onclick = (function(){
+            document.getElementById('popup').style.display='block';
+            document.getElementById('img11').style.display='block';
+        });
+        document.getElementById("img2").onclick = (function(){
+            document.getElementById('popup').style.display='block';
+            document.getElementById('img22').style.display='block';
+        });
+        document.getElementById("img3").onclick = (function(){
+            document.getElementById('popup').style.display='block';
+            document.getElementById('img33').style.display='block';
+        });
+        document.getElementById("img4").onclick = (function(){
+            document.getElementById('popup').style.display='block';
+            document.getElementById('img44').style.display='block';
+        });
+        document.getElementById('X').onclick = (function(){
+            document.getElementById('popup').style.display='none';
+            document.getElementById('img11').style.display='none';
+            document.getElementById('img22').style.display='none';
+            document.getElementById('img33').style.display='none';
+            document.getElementById('img44').style.display='none';
+        });
+        document.getElementById('overlay').onclick = (function(){
+            document.getElementById('popup').style.display='none';
+            document.getElementById('img11').style.display='none';
+            document.getElementById('img22').style.display='none';
+            document.getElementById('img33').style.display='none';
+            document.getElementById('img44').style.display='none';
+        });
+    </script>
+    <!-- onclick="document.getElementById('img1').style.width='900px'" -->
+    <script>
+        var sliderStatus = 1;
+        var sliderTimer = 3000;
+        window.onload = function(){
+            slideShow();
+        }
+        
+        var startslideShow = setInterval(function(){
+            slideShow();
+        },sliderTimer);
+
+        document.getElementById("slider").onmouseover = function() {
+            clearInterval(startslideShow);
+        }
+        document.getElementById("slider").onmouseleave = function() {
+            startslideShow = setInterval(function(){
+            slideShow();
+        },sliderTimer);
+        }
+
+        function slideShow()
+        {
+            if (sliderStatus === 1)
+            {
+                document.getElementById("img2").style.opacity = "0";
+                setTimeout(function(){
+                    document.getElementById("img4").style.right = "0px";
+                    document.getElementById("img4").style.zIndex = "10";
+                    document.getElementById("img3").style.right = "-800px";
+                    document.getElementById("img3").style.zIndex = "10";
+                    document.getElementById("img2").style.right = "-1600px";
+                    document.getElementById("img2").style.zIndex = "5";
+                    document.getElementById("img1").style.right = "800px";
+                    document.getElementById("img1").style.zIndex = "10";
+                    }, 500);
+                    setTimeout(function(){
+                document.getElementById("img2").style.opacity = "1";
+                    }, 1000);
+                    sliderStatus = 2;
+            }
+            else if (sliderStatus === 2)
+            {
+                document.getElementById("img1").style.opacity = "0";
+                setTimeout(function(){
+                    document.getElementById("img3").style.right = "0px";
+                    document.getElementById("img3").style.zIndex = "10";
+                    document.getElementById("img2").style.right = "-800px";
+                    document.getElementById("img2").style.zIndex = "10";
+                    document.getElementById("img1").style.right = "-1600px";
+                    document.getElementById("img1").style.zIndex = "5";
+                    document.getElementById("img4").style.right = "800px";
+                    document.getElementById("img4").style.zIndex = "10";
+                    }, 500);
+                    setTimeout(function(){
+                document.getElementById("img1").style.opacity = "1";
+                    }, 1000);
+                    sliderStatus = 3;
+            }
+            else if (sliderStatus === 3)
+            {
+                document.getElementById("img4").style.opacity = "0";
+                setTimeout(function(){
+                    document.getElementById("img2").style.right = "0px";
+                    document.getElementById("img2").style.zIndex = "10";
+                    document.getElementById("img1").style.right = "-800px";
+                    document.getElementById("img1").style.zIndex = "10";
+                    document.getElementById("img4").style.right = "-1600px";
+                    document.getElementById("img4").style.zIndex = "5";
+                    document.getElementById("img3").style.right = "800px";
+                    document.getElementById("img3").style.zIndex = "10";
+                    }, 500);
+                    setTimeout(function(){
+                document.getElementById("img4").style.opacity = "1";
+                    }, 1000);
+                    sliderStatus = 4;
+            }
+            else if (sliderStatus === 4)
+            {
+                document.getElementById("img3").style.opacity = "0";
+                setTimeout(function(){
+                    document.getElementById("img1").style.right = "0px";
+                    document.getElementById("img1").style.zIndex = "10";
+                    document.getElementById("img4").style.right = "-800px";
+                    document.getElementById("img4").style.zIndex = "10";
+                    document.getElementById("img3").style.right = "-1600px";
+                    document.getElementById("img3").style.zIndex = "5";
+                    document.getElementById("img2").style.right = "1000px";
+                    document.getElementById("img2").style.zIndex = "10";
+                    }, 500);
+                    setTimeout(function(){
+                document.getElementById("img3").style.opacity = "1";
+                    }, 1000);
+                    sliderStatus = 1;
+            }
+        }
+    </script>
+</body>
+</html>
